@@ -1,0 +1,49 @@
+
+body {
+	width:50%;
+}
+
+#title {
+	background-color: red;
+}
+
+#rules {
+	background-color:yellow;
+}
+
+.score {
+	margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+#game-total {
+	background-color: green;
+	margin-right: 5px;
+}
+
+#scoreboard {
+	background-color: blue;
+}
+
+.buttClear {
+	margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-top: 8px;
+}
+
+
+.total {
+	background-color: #A5E1DD;
+	margin-bottom: 5px;
+}
+
+#user-total {
+	height:150px;
+	padding:10px;
+}
+
+
+
+
+
+

@@ -3,10 +3,72 @@
   <head>
     <meta charset="utf-8">
     <title>title</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="/javascript/game.js"></script>
+	<!--CSS-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--BOOTSTRAP-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--javascript-->
+    <script src="assets/javascript/game.js"></script>
+
   </head>
   <body>
-    <!-- page content -->
+    <!--make everything 50% of the page width on computers-->
+    
+    <div class="container-fluid">
+		
+		<div id="title">
+			<h1>Crystal Collector!</h1>
+		</div>
+
+		<div id="rules">
+			<p>You will be given a random number at the start of the game.</p>
+
+			<p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+
+			<p>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</p>
+
+			<p>The value of each crystal is hidden from you until you click on it.</p>
+
+			<p>Each time when the game starts, the game will change the values of each crystal.</p>
+		</div>
+
+		<!--put game-total and scoreboard on the same row next to eachother-->
+		<div class="row score">
+			<div class="col-sm-4" id="game-total"><p></p><p>0</p></div> 
+
+			<div class="col-sm-6" id="scoreboard">
+				<div id="wins">Wins: 0</div>
+				<div id="losses">Losses: 0</div>
+			</div>
+		</div>
+
+
+		<!--put the crystal buttons on the same row-->
+
+		<div class="row buttClear">
+			<div id="buttons">
+			<input type="image" src="assets/images/black_box.jpg" name="black_box" width="125" height="125">
+
+			<input type="image" src="assets/images/blue_box.jpg" name="blue_box" width="125" height="125">
+
+			<input type="image" src="assets/images/yellow_box.jpg" name="yellow_box" width="125" height="125">
+
+			<input type="image" src="assets/images/pink_box.jpg" name="pink_box" width="125" height="125">
+			</div>
+
+		</div>
+
+		<div class="total">Your total score is:</div>
+
+		<div class="total" id="user-total">0</div>
+
+
+
+
+    </div>
+
+
+
+
   </body>
 </html>
