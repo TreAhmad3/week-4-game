@@ -1,20 +1,6 @@
 // add global variables
 
-	var crystal1;
-
-	var crystal2; 
-
-	var crystal3; 
-
-	var crystal4;
-
-	function randomizer(){
-	crystal1 = Math.floor( Math.random() * 11 +1);
-	crystal2 = Math.floor( Math.random() * 11 +1);
-	crystal3 = Math.floor( Math.random() * 11 +1);
-	crystal4 = Math.floor( Math.random() * 11 +1);
-}
-
+/*jslint browser: true*/ /*global  $*/
 
 $( document ).ready(function() {
 
@@ -28,22 +14,31 @@ $( document ).ready(function() {
 
 		totalScore : 0,
 
+		creature1:0,
+
+		creature2:0,
+
+		creature3:0,
+
+		creature4:0,
+
+
 
 
 		
 
 		//startUp function
 		startUp: function(){
-			winningNumber = parseInt(Math.floor(Math.random() * (120 - 19 + 1)) + 19);
+			game.winningNumber = parseInt(Math.floor(Math.random() * (120 - 19 + 1)) + 19);
 
-			console.log("Computer picked " + winningNumber);
+			console.log("Computer picked " + game.winningNumber);
 
-			totalScore = 0;
+			game.totalScore = 0;
 
 			$("#losses").html("Losses: " + game.losses);
 			$("#wins").html("Wins: " + game.wins);
-			$("#game-total").html(winningNumber);
-			$("#user-total").html(totalScore);
+			$("#game-total").html(game.winningNumber);
+			$("#user-total").html(game.totalScore);
 
 			console.log("User's starting score " + game.totalScore);
 
@@ -77,24 +72,24 @@ $( document ).ready(function() {
 		scores: function() {
 			//on the click of the crystal's add value to the users total score
 			$(".crystalSquare").on('click', function(event){
-				totalScore = parseInt(totalScore) + parseInt($(this).data("crystalvalue"));
+				game.totalScore = parseInt(game.totalScore) + parseInt($(this).data("crystalvalue"));
 
 				//see individual crystal values
 				console.log(parseInt($(this).data("crystalvalue")) + " is this crystal's value!");
 
 				//see the users total score	
-				console.log("This is the users total score " + totalScore);
+				console.log("This is the users total score " + game.totalScore);
 
-				$("#user-total").html(totalScore);
+				$("#user-total").html(game.totalScore);
 
-				if (parseInt(totalScore) === winningNumber) {
+				if (parseInt(game.totalScore) === game.winningNumber) {
 					parseInt(game.wins++);
 					$("#wins").html("Wins: " + game.wins);
 					$(this).removeData("crystalvalue"); // win or lose will reset values for new game
 					setTimeout(game.startUp, 1000);
 					setTimeout(game.scores, 1000);
 
-				} else if (parseInt(totalScore) > winningNumber) {
+				} else if (parseInt(game.totalScore) > game.winningNumber) {
 					parseInt(game.losses++);
 					$("#losses").html("Losses: " + game.losses);
 					// console.log(game.losses + " losses!");
